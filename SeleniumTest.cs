@@ -13,6 +13,7 @@ namespace Begineer_WebTesting
         [Test]
         public void NavigateToWebSite()
         {
+            //Navigate to Website
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://clerkconnectdevtest.azurewebsites.net/myaccount");
 
