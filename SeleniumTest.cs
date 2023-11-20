@@ -13,13 +13,25 @@ namespace Begineer_WebTesting
         [Test]
         public void NavigateToWebSite()
         {
-            //Navigate to Website
+            //Navigate to Website - Successful
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://clerkconnectdevtest.azurewebsites.net/myaccount");
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
 
-            driver.FindElement(By.Name("email"));
+            //Send Log-in information to Email and Password Fields - Sucessful
+            var EmailLogin = driver.FindElement(By.Name("email"));
+            EmailLogin.SendKeys("newgreenr70@gmail.com");
+
+            //Send password to password field - Successful
+            var PasswordLogin = driver.FindElement(By.Name("password"));
+           PasswordLogin.SendKeys("Playstationvsxbox88!");
+
+            //Click the the "Sign in" button - Successful
+            var SignInButton = driver.FindElement(By.TagName("Button"));
+            SignInButton.Click();   
+
+            
 
             Assert.Pass();
         }
