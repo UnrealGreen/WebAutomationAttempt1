@@ -11,7 +11,7 @@ namespace Begineer_WebTesting
         }
 
         [Test]
-        public void NavigateToWebSite()
+        public void NavigateToWebSiteLogin()
         {
             //Navigate to Website - Successful
             IWebDriver driver = new ChromeDriver();
@@ -29,11 +29,20 @@ namespace Begineer_WebTesting
 
             //Click the the "Sign in" button - Successful
             var SignInButton = driver.FindElement(By.TagName("Button"));
-            SignInButton.Click();   
+            SignInButton.Click();
 
-            
+            //Open E-Recording - Successful
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            var ERecordingGO = driver.FindElement(By.XPath("//*[@id=\"mysubscriptiontable\"]/div/table/tbody/tr[1]/td[7]/a"));
+            ERecordingGO.Click();
 
-            Assert.Pass();
+            //Press Enter on the E-Recording Ok screen
+           
+
+
+
+
+
         }
     }
 }
