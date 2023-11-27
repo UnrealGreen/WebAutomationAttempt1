@@ -37,8 +37,9 @@ namespace Begineer_WebTesting
             ERecordingGO.Click();
 
             //Press Enter on the E-Recording Ok screen
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(4);
             driver.FindElement(By.TagName("Body")).SendKeys(Keys.Enter);
+
 
 
 
