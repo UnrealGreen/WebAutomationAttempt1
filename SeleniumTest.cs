@@ -94,7 +94,29 @@ namespace Begineer_WebTesting
             Gender.SendKeys(Keys.Enter);
             Gender.SendKeys(Keys.Tab);
 
-            //
+            //Entering lastname, firstname - Successful
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[2]/div[1]/input")).SendKeys("Test");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[2]/div[3]/input")).SendKeys("Test");
+
+            //Entering Residence Address, City, Parish/County, State, ZIP
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[3]/div/div[1]/input")).SendKeys("900 North Market");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[3]/div/div[2]/input")).SendKeys("Bossier");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[3]/div/div[3]/input")).SendKeys("Webster");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[3]/div/div[4]/input")).SendKeys("Lousiana");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[3]/div/div[5]/input")).SendKeys("71055");
+
+
+
+
+
+
+
 
 
 
