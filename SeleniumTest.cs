@@ -11,7 +11,9 @@ namespace Begineer_WebTesting
         }
 
         [Test]
-        public void NavigateToWebSiteLogin()
+
+        /*
+        public void ProcessingE_Recording()
         {
             //Navigate to Website - Successful
             IWebDriver driver = new ChromeDriver();
@@ -36,9 +38,13 @@ namespace Begineer_WebTesting
             var ERecordingGO = driver.FindElement(By.XPath("//*[@id=\"mysubscriptiontable\"]/div/table/tbody/tr[1]/td[7]/a"));
             ERecordingGO.Click();
 
-            //Press Enter on the E-Recording Ok screen
+            //Press Enter on the E-Recording Ok screen - Successful
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(4);
-            driver.FindElement(By.TagName("Body")).SendKeys(Keys.Enter);
+            var CloseButton = driver.FindElement(By.XPath("/html/body/div[7]/md-dialog/form/md-dialog-actions/button"));
+            CloseButton.Click();
+
+            //Submit an E-Recording
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(4);
 
 
 
@@ -47,5 +53,59 @@ namespace Begineer_WebTesting
 
 
         }
+        */
+
+        public void MarriageApplication()
+        {
+            //Navigate to Website - Successful
+            IWebDriver driver2 = new ChromeDriver();
+            driver2.Navigate().GoToUrl("https://clerkconnectdevtest.azurewebsites.net/myaccount");
+
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(6);
+
+            //Click on Marriage application - Successful
+            driver2.FindElement(By.XPath("//*[@id=\"loginWelcome\"]/div[3]/table/tbody/tr[24]/td[12]/a")).Click();
+
+            //Selecting the wedding date - Successful
+            var datePicker = driver2.FindElement(By.XPath("/html/body/div[4]/div[1]/div/div[1]/div/div/div[3]/div/md-datepicker/div[1]/button"));
+            datePicker.Click();
+            driver2.FindElement(By.TagName("body")).SendKeys(Keys.Enter);
+
+
+            //Selecting the submit button - Successful
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            driver2.FindElement(By.XPath("/html/body/div[4]/div[1]/div/div[1]/div/div/div[3]/button")).Click();
+
+            //Entering the Party A as Groom - Successful
+
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            var party = driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[1]/div[1]/div/select"));
+            party.Click();
+            party.SendKeys(Keys.ArrowDown);
+            party.SendKeys(Keys.Enter);
+            party.SendKeys(Keys.Tab);
+
+            //Entering the Party A as Groom - Successful
+
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            var Gender = driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[1]/div[2]/div/select"));
+            Gender.Click();
+            Gender.SendKeys(Keys.ArrowDown);
+            Gender.SendKeys(Keys.Enter);
+            Gender.SendKeys(Keys.Tab);
+
+            //
+
+
+
+
+
+
+
+
+
+
+        }
+
     }
 }
