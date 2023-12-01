@@ -61,7 +61,7 @@ namespace Begineer_WebTesting
             IWebDriver driver2 = new ChromeDriver();
             driver2.Navigate().GoToUrl("https://clerkconnectdevtest.azurewebsites.net/myaccount");
 
-            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(6);
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
             //Click on Marriage application - Successful
             driver2.FindElement(By.XPath("//*[@id=\"loginWelcome\"]/div[3]/table/tbody/tr[24]/td[12]/a")).Click();
@@ -78,14 +78,14 @@ namespace Begineer_WebTesting
 
             //Entering the Party A as Groom - Successful
 
-            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(8);
             var party = driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[1]/div[1]/div/select"));
             party.Click();
             party.SendKeys(Keys.ArrowDown);
             party.SendKeys(Keys.Enter);
             party.SendKeys(Keys.Tab);
 
-            //Entering the Party A as Groom - Successful
+            //Entering the Party A Gender - Successful
 
             driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
             var Gender = driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[1]/div[2]/div/select"));
@@ -99,7 +99,7 @@ namespace Begineer_WebTesting
 
             driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[2]/div[3]/input")).SendKeys("Test");
 
-            //Entering Residence Address, City, Parish/County, State, ZIP
+            //Entering Residence Address, City, Parish/County, State, ZIP - Successful
 
             driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[3]/div/div[1]/input")).SendKeys("900 North Market");
 
@@ -110,6 +110,97 @@ namespace Begineer_WebTesting
             driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[3]/div/div[4]/input")).SendKeys("Lousiana");
 
             driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[3]/div/div[5]/input")).SendKeys("71055");
+
+            //Entering Phone Number, Email, Race, Date of Birth, City - Successful
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[4]/div/div[1]/input")).SendKeys("318-700-1000");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[4]/div/div[2]/input")).SendKeys("none@gmail.com");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[4]/div/div[3]/input")).SendKeys("White");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[4]/div/div[4]/input")).SendKeys("04/11/1995");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[4]/div/div[5]/input")).SendKeys("Bossier");
+
+            //Entering Mother Name and Birthplace - Successful
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[5]/div[2]/div[1]/input")).SendKeys("Debby");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[1]/marriage-party/div/div[5]/div[2]/div[2]/input")).SendKeys("Texas");
+
+            //Pressing Next button for Party A - Successful
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-1\"]/div/div[2]/button")).SendKeys(Keys.Enter);
+
+            //Enter the same information for Party B
+
+            //Groom and Gender - Successful
+            
+
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            var partyB = driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[1]/div[1]/div/select"));
+            partyB.SendKeys(Keys.Enter);
+            partyB.SendKeys(Keys.ArrowDown);
+            partyB.SendKeys(Keys.Enter);
+            partyB.SendKeys(Keys.Tab);
+
+
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(8);
+            var GenderB = driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[1]/div[2]/div/select"));
+            GenderB.SendKeys(Keys.Enter);
+            GenderB.SendKeys(Keys.ArrowDown);
+            GenderB.SendKeys(Keys.Enter);
+            GenderB.SendKeys(Keys.Tab);
+
+            //Lastname, Firstname - Successful
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[2]/div[1]/input")).SendKeys("Test");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[2]/div[3]/input")).SendKeys("Test");
+            //Resideence Address, City, Parish/County, State, ZIP - Successful
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[3]/div/div[1]/input")).SendKeys("900 North Market");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[3]/div/div[2]/input")).SendKeys("Bossier");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[3]/div/div[3]/input")).SendKeys("Webster");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[3]/div/div[4]/input")).SendKeys("Lousiana");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[3]/div/div[5]/input")).SendKeys("71055");
+
+            //Phone Number, Email, Race, Date of Birth, City
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[4]/div/div[1]/input")).SendKeys("318-700-1000");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[4]/div/div[2]/input")).SendKeys("none@gmail.com");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[4]/div/div[3]/input")).SendKeys("White");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[4]/div/div[4]/input")).SendKeys("04/11/1995");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[4]/div/div[5]/input")).SendKeys("Bossier");
+
+            //MotherName and Birthplace
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[5]/div[2]/div[1]/input")).SendKeys("Martha");
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[1]/div/marriage-party/div[1]/div[5]/div[2]/div[2]/input")).SendKeys("Colorodo");
+
+            //Pressing Next button for Party B
+
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-2\"]/div/div[2]/button[2]")).SendKeys(Keys.Enter);
+
+            //Click Next on the "Covenant Marriage" page. 
+            driver2.FindElement(By.XPath("//*[@id=\"tab-content-3\"]/div/div[2]/button[2]")).SendKeys(Keys.Enter);
+
+            //Add notes to clerk
+            driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(8);
+            driver2.FindElement(By.XPath("//*[@id=\"notes\"]")).SendKeys("Automated Test");
+
+            //Click Submit 
+            driver2.FindElement(By.XPath("//*[@id=\"submitbtn\"]")).SendKeys(Keys.Enter);
+
 
 
 
