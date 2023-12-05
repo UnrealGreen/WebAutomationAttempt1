@@ -64,6 +64,7 @@ namespace Begineer_WebTesting
             driver2.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
             //Click on Marriage application - Successful
+            
             driver2.FindElement(By.XPath("//*[@id=\"loginWelcome\"]/div[3]/table/tbody/tr[24]/td[12]/a")).Click();
 
             //Selecting the wedding date - Successful
@@ -199,6 +200,7 @@ namespace Begineer_WebTesting
             driver2.FindElement(By.XPath("//*[@id=\"notes\"]")).SendKeys("Automated Test");
 
             //Click Submit 
+           
             driver2.FindElement(By.XPath("//*[@id=\"submitbtn\"]")).SendKeys(Keys.Enter);
 
 
@@ -217,6 +219,12 @@ namespace Begineer_WebTesting
 
 
 
+
+        }
+
+
+        public void BuyCopy()
+        {
 
         }
 
